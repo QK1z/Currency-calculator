@@ -1,0 +1,93 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url('https://imgupload.pl/images/2022/11/16/waluty_wymiana1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: auto;
+    max-width: 100%;
+    margin: 0 auto;
+   }
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+.header {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.form__labelText {
+    width: 150px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.form__field {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+
+.form__convertButton {
+    width: 100%;
+    border: none;
+    background-color: rgb(41, 112, 53);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+.form__convertButton:hover {
+    background-color: hsl(130, 46%, 35%);
+}
+
+.form__convertButton:active {
+    background-color: hsl(130, 46%, 40%);
+}
+
+.form__fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+    background-color: rgb(250, 237, 217);
+}
+
+.form__field--result {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px; 
+    font-size: x-large;
+    font-style:oblique;
+   
+}
+
+.form__legend {
+    background-color: rgb(41, 112, 53);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.index {
+    font-size: small;
+}

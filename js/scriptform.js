@@ -22,11 +22,13 @@ formElement.addEventListener("submit", (event) => {
             else if (outputCurrency === "EUR") result = (amount / eurToPln);
             else if (outputCurrency === "USD") result = (amount / usdToPln);
             break;
+
         case "EUR":
             if (outputCurrency === "EUR") result = (amount * 1);
             else if (outputCurrency === "PLN") result = (amount * eurToPln);
             else if (outputCurrency === "USD") result = (amount * eurToUsd);
             break;
+            
         case "USD":
             if (outputCurrency === "USD") result = (amount * 1);
             else if (outputCurrency === "PLN") result = (amount * usdToPln);

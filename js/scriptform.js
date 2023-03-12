@@ -1,39 +1,25 @@
 console.log("Witajcie w moim pierwszym kalkulatorze walutowym!");
 
-let formElement = document.querySelector(".js-form");
-let amountElement = document.querySelector(".js-amount");
-let inputCurrencyElement = document.querySelector(".js-inputCurrency");
-let outputCurrencyElement = document.querySelector(".js-outputCurrency");
-let resultElement = document.querySelector(".js-result");
-let eurToPln = 4.77;
-let usdToPln = 4.80;
-let eurToUsd = 0.99;
+const formElement = document.querySelector(".js-form");
+const amountElement = document.querySelector(".js-amount");
+const inputCurrencyElement = document.querySelector(".js-inputCurrency");
+const outputCurrencyElement = document.querySelector(".js-outputCurrency");
+const resultElement = document.querySelector(".js-result");
+
+const currencyRates = {
+  PLN: { PLN: 1, EUR: 1 / 4.77, USD: 1 / 4.80 },
+  EUR: { EUR: 1, PLN: 4.77, USD: 0.99 },
+  USD: { USD: 1, PLN: 4.80, EUR: 1 / 0.99 },
+};
 
 formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    let inputCurrency = inputCurrencyElement.value;
-    let outputCurrency = outputCurrencyElement.value;
-    let amount = amountElement.value;
+  const inputCurrency = inputCurrencyElement.value;
+  const outputCurrency = outputCurrencyElement.value;
+  const amount = amountElement.value;
 
-    switch (inputCurrency) {
-        case "PLN":
-            if (outputCurrency === "PLN") result = (amount * 1);
-            else if (outputCurrency === "EUR") result = (amount / eurToPln);
-            else if (outputCurrency === "USD") result = (amount / usdToPln);
-            break;
+  const result = amount * currencyRates[inputCurrency][outputCurrency];
 
-        case "EUR":
-            if (outputCurrency === "EUR") result = (amount * 1);
-            else if (outputCurrency === "PLN") result = (amount * eurToPln);
-            else if (outputCurrency === "USD") result = (amount * eurToUsd);
-            break;
-            
-        case "USD":
-            if (outputCurrency === "USD") result = (amount * 1);
-            else if (outputCurrency === "PLN") result = (amount * usdToPln);
-            else if (outputCurrency === "EUR") result = (amount / eurToUsd);
-            break;
-    }
-    resultElement.value = result.toFixed(2);
+  resultElement.value = result.toFixed(2);
 });
